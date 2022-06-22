@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_rev_params.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/22 12:53:43 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:42:40 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
@@ -25,6 +26,7 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	ft_putchar('\n');
 }
 
 void	ft_putchar(char c)
@@ -32,11 +34,11 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-/* 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char 	str[] = "Dont panic";
-
-	ft_putstr(str);
+	while (argc > 0)
+	{
+		ft_putstr(argv[argc - 1]);
+		argc--;
+	}
 }
- */

@@ -1,42 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_sqrt.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/21 18:20:24 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:57:39 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+// √144 = ± [(2 × 2 × 3)^2]^1/2
+// √16 = 16^0.5
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+int	ft_sqrt(int nb);
+
+int	ft_sqrt(int nb)
 {
-	int	i;
+	double	temp;
+	double	square;
+	int		i;
 
+	square = nb / 2;
+	temp = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (square != temp && i < 1000000)
 	{
-		ft_putchar(str[i]);
+		temp = square;
 		i++;
+		square = (nb / temp + temp) / 2;
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	if (square == (int)square)
+		return (square);
+	else
+		return (0);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	quotient;
 
-	ft_putstr(str);
+	nb = 9;
+	quotient = ft_sqrt(nb);
+	printf("The result is: %d", quotient);
 }
- */
+*/

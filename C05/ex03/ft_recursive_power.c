@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_recursive_power.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/21 13:38:47 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:56:10 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+int	ft_recursive_power(int nb, int power);
 
-void	ft_putstr(char *str)
+int	ft_recursive_power(int nb, int power)
 {
-	int	i;
+	int	quotient;
 
-	i = 0;
-	while (str[i] != '\0')
+	quotient = 1;
+	if (power < 0)
+		return (0);
+	if (power != 0)
 	{
-		ft_putchar(str[i]);
-		i++;
+		quotient = nb * ft_recursive_power(nb, (power - 1));
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	return (quotient);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	power;
+	int	quotient;
 
-	ft_putstr(str);
+	nb = 3;
+	power = 4;
+	quotient = ft_recursive_power(nb, power);
+	printf("\n\nThe result is: %d", quotient);
 }
- */
+*/

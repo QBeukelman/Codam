@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_fibonacci.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/21 17:51:00 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:57:04 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+// Fn = F(n1) + F(n2)
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+int	ft_fibonacci(int index);
+
+int	ft_fibonacci(int index)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	if (index == 0)
+		return (0);
+	if (index < 2)
+		return (index);
+	else
+		return (ft_fibonacci(index - 2) + ft_fibonacci(index - 1));
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	index;
+	int	quotient;
 
-	ft_putstr(str);
+	index = 20;
+	quotient = ft_fibonacci(index);
+	printf("\n\nThe result is: %d", quotient);
 }
- */
+*/

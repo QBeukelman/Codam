@@ -6,7 +6,7 @@
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/16 14:47:40 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/20 13:53:36 by qbeukelm      ########   odam.nl         */
+/*   Updated: 2022/06/22 09:11:46 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	base_conversion(int nbr, int count, char *base)
 	}
 }
 
-/* 
+
 int	main(void)
 {
 	char *decimal = "0123456789";
@@ -114,6 +114,5 @@ int	main(void)
 	char *octal = "poneyvif";
 	char *test = "aba";
 
-	ft_putnbr_base(-2256, hexidecimal);
+	ft_putnbr_base(4748364, hexidecimal);
 }
- */

@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_iterative_power.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/21 13:12:06 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:54:52 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+// 3^3 = (3*3) + (3*3) + (3*3) = 27;
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+#include <stdio.h>
 
-void	ft_putstr(char *str)
+int	ft_iterative_power(int nb, int power);
+
+int	ft_iterative_power(int nb, int power)
 {
 	int	i;
+	int	quotient;
 
 	i = 0;
-	while (str[i] != '\0')
+	quotient = 1;
+	if (power < 0)
+		return (0);
+	while (i < power)
 	{
-		ft_putchar(str[i]);
+		quotient = quotient * nb;
 		i++;
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	return (quotient);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	power;
+	int	quotient;
 
-	ft_putstr(str);
+	nb = 5;
+	power = 5;
+	quotient = ft_iterative_power(nb, power);
+	printf("\n\nThe result is: %d", quotient);
 }
- */
+*/

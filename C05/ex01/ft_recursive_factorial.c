@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_recursive_factorial.c                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/21 12:52:52 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:52:43 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+int	ft_recursive_factorial(int nb);
 
-void	ft_putstr(char *str)
+int	ft_recursive_factorial(int nb)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	if (nb >= 1)
 	{
-		ft_putchar(str[i]);
-		i++;
+		nb = nb * ft_recursive_factorial(nb - 1);
+		return (nb);
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	else
+		return (1);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	quotient;
 
-	ft_putstr(str);
+	nb = 5;
+	quotient = ft_recursive_factorial(nb);
+	printf("\n\nThe result is: %d", quotient);
 }
- */
+*/

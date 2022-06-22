@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_is_prime.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/22 10:37:02 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 22:00:07 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+int	ft_is_prime(int nb);
 
-void	ft_putstr(char *str)
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 2;
+	while (i < (nb - 1))
 	{
-		ft_putchar(str[i]);
+		if (nb % i == 0)
+		{
+			return (0);
+		}
 		i++;
 	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+	return (1);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	result;
 
-	ft_putstr(str);
+	nb = 11;
+	result = ft_is_prime(nb);
+	printf("The result is: %d", result);
 }
- */
+*/

@@ -1,42 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_find_next_prime.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/22 15:50:17 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 21:59:07 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str);
-void	ft_putchar(char c);
+int	ft_find_next_prime(int nb);
+int	ft_is_prime(int nb);
 
-void	ft_putstr(char *str)
+int	ft_find_next_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	i = 1;
+	while (ft_is_prime(nb + i) == 0)
 	{
-		ft_putchar(str[i]);
 		i++;
 	}
+	return (nb + i);
 }
 
-void	ft_putchar(char c)
+int	ft_is_prime(int nb)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 2;
+	while (i < (nb - 1))
+	{
+		if ((nb % i) == 0)
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
 
 /* 
 int	main(void)
 {
-	char 	str[] = "Dont panic";
+	int	nb;
+	int	result;
 
-	ft_putstr(str);
+	nb = 2005134636;
+	result = ft_find_next_prime(nb);
+	printf("The result is: %d", result);
 }
- */
+*/

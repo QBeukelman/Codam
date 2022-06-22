@@ -55,7 +55,7 @@ void	convert_atoi_func(char *str)
 	result = 0;
 	while (str[i] != '\0')
 	{
-		result = (result * 10) + str[i] - '0';
+		result = (result * 10) + str[i] - 48;
 		i++;
 	}
 	ft_positive(result);

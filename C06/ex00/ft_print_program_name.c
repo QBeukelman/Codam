@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr.c                                        :+:    :+:            */
+/*   ft_print_program_name.c                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/06/16 20:23:07 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/21 12:52:32 by qbeukelm      ########   odam.nl         */
+/*   Created: 2022/06/22 11:00:26 by qbeukelm      #+#    #+#                 */
+/*   Updated: 2022/06/22 12:52:00 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	ft_putchar('\n');
 }
 
 void	ft_putchar(char c)
@@ -32,11 +33,13 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-/* 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char 	str[] = "Dont panic";
+	int		i;
 
-	ft_putstr(str);
+	i = 0;
+	if (argc > 0)
+	{
+		ft_putstr(argv[0]);
+	}
 }
- */
