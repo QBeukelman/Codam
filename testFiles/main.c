@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int	ft_strcmp(char *s1, char *s2);
+
+// Main entry point
+int main()
+{
+	char	s1[] = "Hello";
+	char	s2[] = "Hello Goodbye";
+	int		i;
+
+	i = ft_strcmp(s1, s2);
+	printf("Th differance in ascii: %d", i);
+}
 
 // Variables - 1 Introduction 
 void	variables(void)
@@ -74,9 +86,7 @@ void	operations4(void)
 
 }
 
-
 // Conditions 2 - switch and break
-
 void	conditions2(void)
 {
 	int	a;
@@ -100,8 +110,8 @@ void	conditions2(void)
 }
 
 
-void conditions3(void) {
-
+void conditions3(void)
+{
 	int	a;
 	int	b;
 
@@ -115,10 +125,32 @@ void conditions3(void) {
 	printf("%d\n", b);
 }
 
-// Main entry point
-int main()
+// Sorting algorythm 
+
+// Command line argumets
+
+// Malloc and free
+
+// Atoi
+
+// strcmp
+int	ft_strcmp(char *s1, char *s2)
 {
-	conditions3();
+	int i;
+	int value;
+
+	i = 0;
+	value = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			break ;
+	}
+	if (s1[i] == s2[i])
+		return (0);
+	else if (s1[i] != s2[i])
+		value = (s1[i] - s2[i]);
+	return (value);
 }
-
-

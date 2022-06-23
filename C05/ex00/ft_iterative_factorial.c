@@ -6,7 +6,7 @@
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/21 10:06:32 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/23 11:28:06 by qbeukelm      ########   odam.nl         */
+/*   Updated: 2022/06/23 12:56:28 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	ft_iterative_factorial(int nb)
 /* 
 int	main(void)
 {
-	int	nb;
 	int	quotient;
 
 	quotient = ft_iterative_factorial(-66);

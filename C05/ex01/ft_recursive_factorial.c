@@ -6,7 +6,7 @@
 /*   By: qbeukelm <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/21 12:52:52 by qbeukelm      #+#    #+#                 */
-/*   Updated: 2022/06/23 11:31:59 by qbeukelm      ########   odam.nl         */
+/*   Updated: 2022/06/23 12:56:30 by qbeukelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,4 @@ int	main(void)
 	quotient = ft_recursive_factorial(11);
 	printf("\n11: %d\n", quotient);
 }
- */
+*/
