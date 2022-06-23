@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int	ft_strcmp(char *s1, char *s2);
+int	ft_atoi(char *str);
 
 // Main entry point
 int main()
 {
-	char	s1[] = "Hello";
-	char	s2[] = "Hello Goodbye";
+	char	s1[] = "1234567";
 	int		i;
 
-	i = ft_strcmp(s1, s2);
-	printf("Th differance in ascii: %d", i);
+	i = ft_atoi(s1);
+	printf("The atoi is: %d", i);
 }
 
 // Variables - 1 Introduction 
@@ -126,12 +127,55 @@ void conditions3(void)
 }
 
 // Sorting algorythm 
+void sort_list(char *argv)
+{
+	int		i;
+	int 	j;
+	char	*temp
+
+	i = 0;
+	j = 0;
+	cout = count_characters(str);
+	while (i < count)
+	{
+		while (j < count)
+		{
+			if (ft_strcm(argv[j], argv[j + 1]) > 0)
+			{
+
+			}
+		}
+	}
+}
 
 // Command line argumets
+int command_line_arg(int argc, char **argv)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+	}
+}
 
 // Malloc and free
+// Make dynamic grid
+void ft_make_grid(int row, int col)
+{
+	int		i;
+	char	**grid;
 
-// Atoi
+	i = 0;
+	grid = malloc(row * sizeof(int));
+	while (i <= col)
+	{
+		*gird = malloc(col * sizeof(int));
+		i++;
+	}
+	return (grid);
+}
 
 // strcmp
 int	ft_strcmp(char *s1, char *s2)
@@ -153,4 +197,19 @@ int	ft_strcmp(char *s1, char *s2)
 	else if (s1[i] != s2[i])
 		value = (s1[i] - s2[i]);
 	return (value);
+}
+
+// Atoi
+int	ft_atoi(char *str)
+{
+	int result;
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+	result = (result * 10) + str[i] - '0';
+		i++;
+	}
+	return (result);
 }
